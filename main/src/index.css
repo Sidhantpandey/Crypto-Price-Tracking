@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", serif;
+}
+a{
+  text-decoration: none
+  color(inherit red green blue);
+}
+
+.app{
+  min-height: 100vh;
+  color: white;
+  background: linear-gradient(#0b004e,#1d152f,#002834);
+}

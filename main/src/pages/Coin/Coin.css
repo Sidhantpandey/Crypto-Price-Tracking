@@ -1,0 +1,139 @@
+/* Add a subtle background animation for the entire container */
+body {
+    background-color: #121212; /* Dark background for better contrast */
+    animation: gradientAnimation 10s infinite;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background: linear-gradient(to right, #121212, #121212);
+    }
+    50% {
+      background: linear-gradient(to right, #121212, #282828);
+    }
+    100% {
+      background: linear-gradient(to right, #121212, #121212);
+    }
+  }
+
+.spinner{
+    display: grid;
+    place-self: center;
+    min-height: 80vh;
+}
+
+.spin{
+    
+    width: 65px;
+    height: 65px;
+    place-self: center;
+    border: 5px solid #bdbdbd;
+    border-top-color: #4500C6;
+    border-radius: 50%;
+    animation: rotate 2s infinite;
+}
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.coin{
+    padding: 0 20px;
+}
+.coin-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 100px auto;
+    margin-bottom: 50px;
+
+}
+@keyframes pulse {
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Animate the coin name and price */
+
+.coin-name img{
+    width: 120px;
+    animation: pulse 1s infinite alternate;
+
+}
+
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+.coin-name p b{
+    font-size: 35px;
+    font-weight: 600;
+    animation: fadeInUp 2s ease-in-out;
+
+}
+/* Animate the chart with a slight bounce effect */
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+.coin-chart{
+    max-width: 600px;
+    height: 250px;
+    margin: auto;
+    animation: bounce 1s ease-in-out;
+
+    
+}
+.coin-info{
+    max-width: 600px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+@keyframes slideIn {
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+.coin-info ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    border-bottom: 1px solid #5f5d5f;
+    list-style: none;
+    animation: slideIn 1s ease-in-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Stagger the appearance of each list item */
+.coin-info ul li {
+    animation-delay: calc(0.1s * var(--index));
+  }
+/* Add a hover effect to the chart */
+.coin-chart:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in-out;
+  }  
+.coin-info ul li:last-child{
+    font-weight: 300;
+}
